@@ -67,7 +67,7 @@ const startGame = () => {
           // Remove alert after 1sec
           setTimeout(() => {
             alert.classList.remove("show-alert");
-          }, 1000);
+          }, 500);
         } else {
           alert.classList.add("show-alert");
           alert.classList.remove("success");
@@ -75,14 +75,14 @@ const startGame = () => {
           alert.innerHTML = `<p>Oops! You guessed wrong</p>`;
           setTimeout(() => {
             alert.classList.remove("show-alert");
-          }, 1000);
+          }, 500);
         }
 
         if (numOfTries < 6) {
           setTimeout(() => {
             startGame();
             envelope.classList.remove("show-envelope");
-          }, 1000);
+          }, 500);
         }
 
         // Check if the game is over
