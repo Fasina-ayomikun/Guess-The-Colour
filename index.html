@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/0f386651af.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="styles.css" />
+    <title>Guess the Colour</title>
+  </head>
+  <body>
+    <section class="game-section">
+      <div class="alert success">
+        <p>Nicely Done 🌟🌟🌟</p>
+      </div>
+
+      <div class="game-container">
+        <p class="score"><b>Score:</b> 0/5</p>
+        <h1>Guess the Colour?</h1>
+        <div class="envelope">
+          <div></div>
+          <p>?</p>
+        </div>
+        <ul class="options"></ul>
+        <button class="btn quit-btn">Quit</button>
+      </div>
+    </section>
+    <section class="model">
+      <div class="model-container">
+        <p>
+          Are you sure you want <br />
+          to end the game?
+        </p>
+        <div>
+          <button class="btn confirm-btn">Confirm</button>
+          <button class="btn cancel-btn">Cancel</button>
+        </div>
+      </div>
+    </section>
+    <section class="winner-page">
+      <div class="winner-container">
+        <h1>Yay! You won.</h1>
+        <p>Would you like to go again?</p>
+
+        <button class="btn retry-btn">Start Over</button>
+      </div>
+    </section>
+    <script src="app.js"></script>
+  </body>
+</html>
