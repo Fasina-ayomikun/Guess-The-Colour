@@ -20,7 +20,7 @@ const randomColorGenerator = () => {
   }
   return hexColor;
 };
-
+let guessing = true;
 const startGame = () => {
   let color1 = randomColorGenerator();
   let color2 = randomColorGenerator();
@@ -49,6 +49,11 @@ const startGame = () => {
     color.addEventListener(
       "click",
       () => {
+        // If guessing is not true then do nothing
+        if (!guessing) {
+          return;
+        }
+        guessing = false;
         // Increase number of tries by 1
         numOfTries++;
         const colorType =
@@ -67,7 +72,7 @@ const startGame = () => {
           // Remove alert after 1sec
           setTimeout(() => {
             alert.classList.remove("show-alert");
-          }, 500);
+          }, 1000);
         } else {
           alert.classList.add("show-alert");
           alert.classList.remove("success");
@@ -75,14 +80,16 @@ const startGame = () => {
           alert.innerHTML = `<p>Oops! You guessed wrong</p>`;
           setTimeout(() => {
             alert.classList.remove("show-alert");
-          }, 500);
+          }, 1000);
         }
 
         if (numOfTries < 6) {
           setTimeout(() => {
             startGame();
+            guessing = true;
+
             envelope.classList.remove("show-envelope");
-          }, 500);
+          }, 1000);
         }
 
         // Check if the game is over
@@ -121,6 +128,7 @@ retryBtn.addEventListener("click", () => {
   score.innerHTML = `<b>Score:</b> 0/5`;
   winningModel.classList.remove("show-model");
   startGame();
+  guessing = true;
   currentScore = 0;
   numOfTries = 0;
 });
