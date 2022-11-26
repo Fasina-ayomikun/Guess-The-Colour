@@ -121,6 +121,7 @@ cancelBtn.addEventListener("click", () => {
 confirmBtn.addEventListener("click", () => {
   score.innerHTML = `<b>Score:</b> 0/5`;
   currentScore = 0;
+  numOfTries = 0;
   startGame();
   model.classList.remove("show-model");
 });
